@@ -96,6 +96,10 @@ userRouter.put(
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;
       if (req.body.password) {
+        // if(password.length < 10){
+        //   res.status(401).send("Password must be at least 10 characters")
+        //   throw new Error("Password must be at least 10 characters")
+        // }
         user.password = req.body.password;
       }
       const updatedUser = await user.save();
